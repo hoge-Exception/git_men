@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, initial-scale=1.0">
+    <title>相談情報管理システム　トップページ</title>
+    <script src="js\jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css\topmenu.css">
+  </head>
+  <body>
+    <header>
+      <h1>相談情報管理システム　トップページ</h1>
+      <nav class="h-nav">
+      <label id="user-label">テスト　太朗</label>
+        <ul class="h-menu">
+          <input type="button" class="head-button" onclick="location.href='http://localhost:8080/'" value="ログアウト">
+        </ul>
+        
+      </nav>
+    </header>
+    <div id="content">
+      <div id="input-form">
+        <div>
+          <input type="button" id="cancel2-button" onclick="location.href='003_01マイページ.html'" value="マイページ">
+          </br>
+          <input type="button" id="cancel-button" onclick="location.href='006_01相談台帳メニュー.html'" value="相談台帳">
+          <input type="button" id="cancel-button" onclick="location.href='007_01検索条件.html'" value="相談カード検索">
+          </br>
+          <input type="button" id="cancel-button" onclick="location.href='008データ取込.html'" value="データ取込み">
+          <input type="button" id="cancel-button" onclick="location.href='009月計表出力.html'" value="月計表出力">
+          </br>
+          <input type="button" id="cancel-button" onclick="location.href='010CSVデータ出力.html'" value="CSVデータ出力">
+          <input type="button" id="cancel-button" onclick="location.href='http://localhost:8080/011_01UserInformationMenu'" value="ユーザ情報">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

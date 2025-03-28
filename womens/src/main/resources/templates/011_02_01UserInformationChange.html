@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>相談情報管理システム ユーザ情報変更</title>
+<link rel="stylesheet" href="css\useredit.css">
+<style>
+.error-message {
+	color: red;
+	display: none;
+	line-height: 1; /* 行間をフォントサイズと同じに */
+	padding: 0; /* パディングをゼロに */
+	margin: 2px 0;
+}
+
+.dialog {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog-content {
+	background-color: #000;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	color: #fff;
+}
+
+.dialog-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.dialog-buttons button {
+	background-color: #1abc9c;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+.dialog-buttons button:hover {
+	background-color: #16a085;
+}
+</style>
+<script th:inline="javascript">
+
+
+function showConfirmationDialog() {
+        document.getElementById("dialog").style.display = "flex";
+}
+
+function confirmAction() {
+    document.getElementById("userInformationChangeForm").submit();
+}
+
+function cancelAction() {
+    document.getElementById("dialog").style.display = "none";
+}
+
+function showResultDialog(message) {
+    document.getElementById("dialog2").style.display = "flex";
+    document.getElementById("dialog2-content").textContent = message;
+}
+
+function closeResultDialog() {
+    document.getElementById("dialog2").style.display = "none";
+    if (document.getElementById("dialog2-content").textContent === "更新に成功しました。") {
+        location.href = 'http://localhost:8080/011_02UserInformationList';
+    }
+}
+
+window.onload = function() {
+    const success = /*[[${success}]]*/ false;
+    const errorMessage1 = /*[[${errorMessage1}]]*/ null;
+    const errorMessage2 = /*[[${errorMessage2}]]*/ null;
+    const errorMessage3 = /*[[${errorMessage3}]]*/ null;
+    if (success === true) {
+        showResultDialog("更新に成功しました。");
+    } else if (errorMessage1 || errorMessage2 || errorMessage3) {
+        showResultDialog("更新に失敗しました");
+        document.getElementById("errorMessage1").textContent = errorMessage1;
+        document.getElementById("errorMessage2").textContent = errorMessage2;
+        document.getElementById("errorMessage3").textContent = errorMessage3;
+        document.getElementById("errorMessage1").style.display = "block";
+        document.getElementById("errorMessage2").style.display = "block";
+        document.getElementById("errorMessage3").style.display = "block";
+    }
+};
+    </script>
+</head>
+<body>
+	<header>
+		<h1>相談情報管理システム ユーザ情報変更</h1>
+		<nav class="h-nav">
+			<label id="user-label">テスト 太朗</label>
+			<ul class="h-menu">
+				<input type="button" class="head-button"
+					onclick="location.href='001ログイン.html'" value="ログアウト">
+			</ul>
+		</nav>
+	</header>
+	<div id="content">
+		<div id="input-form">
+			<form id="userInformationChangeForm" method="post"
+				action="/updateUser">
+				<table>
+					<tr>
+						<th>ユーザID：</th>
+						<td><input type="text" name="user_id_check"
+							class="generic-text"
+							th:value="${userData != null ? userData[0].user_id : ''}"></td>
+					</tr>
+					<tr>
+						<th>ユーザ名：</th>
+						<td>姓<input type="text" class="input2" name="user_name"
+							th:value="${userData != null ? userData[0].user_name : ''}">
+							名<input type="text" class="input2" name="user_name_last"
+							th:value="${userData != null ? userData[0].user_name_last : ''}"></td>
+					</tr>
+					<tr>
+						<th>アクセス権限：</th>
+						<td><select name="authority_kbn" id="authority-select">
+								<option value="1"
+									th:selected="${userData != null and userData[0].authority_kbn == '1'}">システム管理者</option>
+								<option value="2"
+									th:selected="${userData != null and userData[0].authority_kbn == '2'}">利用管理者</option>
+								<option value="3"
+									th:selected="${userData != null and userData[0].authority_kbn == '3'}">ユーザ(代理編集可)</option>
+								<option value="4"
+									th:selected="${userData != null and userData[0].authority_kbn == '4'}">一般ユーザ</option>
+						</select></td>
+					</tr>
+					<tr>
+						<th>状態：</th>
+						<td><select name="status_kbn" id="group-select">
+								<option value="0"
+									th:selected="${userData != null and userData[0].status_kbn == '0'}">アクティブ</option>
+								<option value="1"
+									th:selected="${userData != null and userData[0].status_kbn == '1'}">インアクティブ</option>
+								<option value="2"
+									th:selected="${userData != null and userData[0].status_kbn == '2'}">ロック</option>
+						</select></td>
+					</tr>
+				</table>
+				<div id="err-msg-box">
+					<div id="errorMessage1" class="error-message"></div>
+					<div id="errorMessage2" class="error-message"></div>
+					<div id="errorMessage3" class="error-message"></div>
+				</div>
+				<div th:each="user : ${userData}">
+					<input type="hidden" name="user_id" th:value="${user.user_id}">
+					<input type="hidden" name="seq_no" th:value="${user.seq_no}">
+					<input type="button" id="password-button" value="情報変更"
+						onclick="showConfirmationDialog()"> <input type="button"
+						id="cancel-button"
+						onclick="location.href='http://localhost:8080/011_02UserInformationList'"
+						value="キャンセル">
+				</div>
+			</form>
+			<div class="dialog" id="dialog">
+				<div class="dialog-content">
+					<p>情報変更を実行しますか？</p>
+					<div class="dialog-buttons">
+						<button onclick="confirmAction()">はい</button>
+						<button onclick="cancelAction()">いいえ</button>
+					</div>
+				</div>
+			</div>
+			<div class="dialog" id="dialog2">
+				<div class="dialog-content">
+					<p id="dialog2-content"></p>
+					<div class="dialog-buttons">
+						<button onclick="closeResultDialog()">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,341 @@
+body {
+  width: 1280px;
+  height: 800px;
+  margin: 0;
+}
+
+/* ヘッダ */
+header {
+  width: 1280px;
+  height: 70px;
+  background: #136FFF;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 200px;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'MS Pゴシック'
+}
+
+header label#user-label {
+  padding-top: 20px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+header .h-nav {
+  margin: 0 0 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+header .head-button {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	height: 30px;
+	font-weight: bold;
+	border: 2px solid #fff;
+	color: #fff;
+	background: #136FFF;
+}
+header .head-button:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+
+
+/* ページメイン */
+div#content {
+  margin-top: 65px;
+  height: 55%;
+}
+
+div#submenu-panel {
+  width: 100%;
+  height: 60px;
+  background-color: #FFF8DC;
+}
+
+div#submenu-panel table {
+  margin: left;
+}
+
+div#submenu-panel input {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 150px;
+	font-size: 18px;
+	padding: 0rem 0rem;
+	font-weight: bold;
+	border-radius: 1vh;
+	border-bottom: 7px solid #0686b2;
+	background: #27acd9;
+	color: #fff;
+	height: 60px;
+}
+div#submenu-panel input:hover {
+	border-bottom: 1px solid #0686b2;
+	color: #fff;
+}
+
+
+div#submenu-panel {
+  float: left;
+  height: 15%;
+}
+
+div#main-panel {
+  padding-left: 10px;
+  padding-top: 70px;
+  padding-bottom: 10px;
+
+}
+
+label#tab-title{
+  font-size: 26px;
+  font-family: 'MS Pゴシック'
+
+}
+
+.tab-panel {
+  display: flex;
+  flex-wrap: wrap;
+  width: 99%;
+  padding-left: 5px;
+}
+
+.tab-panel > label {
+  flex: 1 1;
+  order: -1;
+  padding: 9px 13px 5px;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 0;  background-color: #a9a9a9;
+  color: #535353;
+  font-size: 19px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px 15px 0 0;
+  margin: 0 1px 0 1px;
+}
+
+.tab-panel > label:hover {
+  opacity: .8;
+}
+
+.tab-panel input {
+  display: none;
+}
+
+.tab-panel > div {
+  display: none;
+  width: 100%;
+  height: 620px;
+  background-color: #fff;
+  border: 2.5px solid #27acd9;
+}
+
+.tab-panel label:has(:checked) {
+  background-color: #6CBED9;
+  border-color: #27acd9 #27acd9 #82C3D9;
+  color: #000;
+  border-style: solid;
+  font-weight:  bold;
+}
+
+.tab-panel label:has(:checked) + div {
+  display: block;
+}
+
+.tab-panel label#tab-sum {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.tab-panel  #re-button {
+  display: block;
+  margin-left: 5px;
+  width: 80px;
+  color: #000;
+  background-color: #EEEEEE;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+.tab-panel  #re-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+
+.sum-table {
+  width: 100%;
+  text-align: center;
+  height: 555px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  overflow-y: scroll;  
+}
+.sum-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 5px;
+  background: #6CBED9;
+  border: solid 1.5px #778ca3;
+}
+
+
+
+.sum-table td {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+}
+
+.sum-table td  {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+}
+
+.sum-table td input {
+  display: block;
+  margin: auto;
+  width: 100px;
+  color: #000;
+  background-color: #EEEEEE;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+.sum-table td input:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+.sum-table th:nth-of-type(1),
+.sum-table td:nth-of-type(1){
+  width: 170px;
+}
+
+.sum-table th:nth-of-type(2),
+.sum-table td:nth-of-type(2){
+  width: 100px;
+}
+
+.sum-table th:nth-of-type(3),
+.sum-table td:nth-of-type(3){
+  width: 170px;
+}
+
+.sum-table th:nth-of-type(4),
+.sum-table td:nth-of-type(4){
+  width: 45px;
+}
+
+.sum-table th:nth-of-type(5),
+.sum-table td:nth-of-type(5){
+  width: 45px;
+}
+
+.sum-table th:nth-of-type(6),
+.sum-table td:nth-of-type(6){
+  width: 45px;
+}
+
+.sum-table th:nth-of-type(7),
+.sum-table td:nth-of-type(7){
+  width: 80px;
+}
+
+.sum-table th:nth-of-type(8),
+.sum-table td:nth-of-type(8){
+  width: 500px;
+}
+
+.sum-table th:nth-of-type(9),
+.sum-table td:nth-of-type(9){
+  width: 100px;
+}
+
+.sum-table th:nth-of-type(10),
+.sum-table td:nth-of-type(10){
+  width: 30px;
+}
+
+
+
+
+div#cancel-form div {
+  text-align: center;
+  margin-top: 5px;
+}
+
+div#cancel-form #cancel-button {
+  margin: 5px;
+  margin-left: 1050px;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  background-color: #d3d3d3;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#cancel-form #cancel-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+
+
+
+
+
+
+.tsImgArea{
+  line-height: 1;
+}
+
+.tsImg{
+  display    : inline-block;
+  width      : 8px;
+  height     : 6px;
+  background : #eee;
+  border     : 1px solid #777;
+  margin     : 1px 3px;
+  padding    : 3px;
+  cursor     : pointer;
+}
+
+.tsImg:hover{
+  background : #FFD700;
+}
+
+.tsImg path{
+  fill       : #777;
+}
+ 
+ 
+

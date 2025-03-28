@@ -1,0 +1,201 @@
+body {
+  width: 1280px;
+  height: 800px;
+}
+
+/* ヘッダ */
+header {
+  width: 1280px;
+  height: 70px;
+  background: #136FFF;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 200px;
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'MS Pゴシック'
+}
+
+header label#user-label {
+  padding-top: 10px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  font-size: 15px;
+}
+
+header .h-nav {
+  margin: 0 0 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+header .head-button {
+  font-size: 22px;
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  background-color: #888888;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+header .head-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+/* ページメイン */
+div#content {
+  margin-top: 90px;
+}
+
+div#lock-content {
+    padding-right: 20px;
+    text-align: right;
+}
+
+div#lock-content #lock-button {
+  font-size: 22px;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  background-color: #888888;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#lock-content #lock-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+div#input-form {
+  margin-top:  20px;
+  overflow-y: auto;
+  height: 600px;
+}
+
+div#input-form table.input-table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+div#input-form table.input-table > tbody > tr {
+  height: 50px;
+}
+
+div#input-form table.input-table > tbody > tr > th {
+  padding: 5px;
+  background: #e9faf9;
+  border: solid 1.5px #778ca3;
+  width: 300px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 22px;
+}
+div#input-form table.input-table > tbody > tr > td {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+  width: 900px;
+  font-size: 17px;
+}
+
+div#register-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+div#register-content #register-button {
+  font-size: 22px;
+  width: 300px;
+  height: 40px;
+  color: #fff;
+  background-color: #888888;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#input-form #register-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+div#input-form table.input-table input[type="text"] {
+  height: 30px;
+  width: 250px;
+  font-size: 22px;
+}
+
+div#input-form table.input-table input[type="time"] {
+  height: 30px;
+  width: 110px;
+  font-size: 25px;
+}
+
+.drop1 {
+  height: 33px;
+  width: 250px;
+  font-size: 22px;
+}
+
+.drop2 {
+  height: 33px;
+  width: 130px;
+  font-size: 22px;
+}
+
+.inner-table1 td {
+  width: 420px;
+  font-size: 17px;
+}
+
+.inner-table2 td {
+  width: 300px;
+  font-size: 17px;
+}
+
+input[type="text"].input3 {
+  height: 25px !important;
+  font-size: 17px !important;
+}
+
+input[type="text"].input2 {
+  height: 25px !important;
+  width: 100px !important;
+  font-size: 17px !important;
+}
+
+input[type="text"].long {
+  height: 25px !important;
+  width: 700px !important;
+  font-size: 17px !important;
+}
+
+.inner-info {
+  font-size: 17px;
+}
+
+.extra {
+  font-size: 17px !important;
+  height: 25px !important;
+  width: 600px !important;
+}
+
+textarea {
+  resize: none;
+  width:800px;
+  height:180px;
+  font-size: 19px;
+}

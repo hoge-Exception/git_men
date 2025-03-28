@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, initial-scale=1.0">
+    <title>相談情報管理システム　ユーザ情報</title>
+    <script src="js\jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css\userlist.css">
+  </head>
+  <body>
+    <header>
+      <h1>相談情報管理システム　ユーザ情報</h1>
+      <nav class="h-nav">
+      <label id="user-label">テスト　太朗</label>
+        <ul class="h-menu">
+          <input type="button" class="head-button" onclick="location.href='http://localhost:8080/'" value="ログアウト">
+        </ul>
+      </nav>
+    </header>
+    <div id="content">
+      <div id="button-content">
+      <label id="user-label"></label>
+      </div>
+      <div id="table-content">
+         <table class="sum-table">
+            <thead>
+              <tr>
+                <th class="sticky_row">ユーザID</th>
+                <th>ユーザ名</th>
+                <th>状態</th>
+                <th>情報変更</th>
+                <th>パスワード再設定</th>
+                <th class="sticky_from">ロック解除</th>
+                <th>アクセス権限</th>
+                <th>利用開始</th>
+                <th>最終ログイン日</th>
+                <th>利用停止</th>
+              </tr>
+            </thead>
+           
+            <tbody>
+              <tr th:each="user : ${userData}">
+                <td class="sticky_row" th:text="${user.user_id}"></td>
+                <td th:text="${user.user_name} +  ' ' + ${user.user_name_last}"></td>
+                <td th:switch="${user.status_kbn}">
+                	<span th:case=0 th:text="アクティブ"></span>
+                	<span th:case=1 th:text="インアクティブ"></span>
+                	<span th:case=2 th:text="ロック"></span>
+                </td>
+                <td>
+                	<form method="post" action="/011_02_01UserInformationChange">
+                		<input type="hidden" name="user_id" th:value="${user.user_id}" />
+                		<button type="submit" class="td-button">情報変更</button>
+                	</form>
+               	</td>
+               	<td class="sticky_from">
+               		<form method="post" action="/011_02_02PasswordReset">
+               			<input type="hidden" name="user_id" th:value="${user.user_id}" />
+               			<button type="submit" class="tb-button">パスワード再設定</button>
+	                </form>
+	            </td>
+                <td class="sticky_from"><input type="button" id="lock-button" class="td-button" onclick="" value="ロック解除" disabled></td>
+                <td th:switch="${user.authority_kbn}">
+                	<span th:case=1 th:text="システム管理者"></span>
+                	<span th:case=2 th:text="ユーザ管理者"></span>
+                	<span th:case=3 th:text="代理権限ありユーザ"></span>
+                	<span th:case=4 th:text="一般ユーザ"></span>                	
+                </td>
+                <td th:text="${user.create_day}"></td>
+                <td th:text="${user.login_day}"></td>
+                <td th:text="${user.delete_day}"></td>
+                
+                
+              </tr>
+            </tbody>
+         </table>
+      </div>
+      
+      <div id="input-form">
+          <input type="button" id="cancel-button" onclick="location.href='http://localhost:8080/011_01UserInformationMenu'" value="ユーザ情報メニューへ戻る">
+      </div>
+    </div>
+  </body>
+</html>

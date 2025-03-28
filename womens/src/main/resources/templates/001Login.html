@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, initial-scale=1.0">
+    <title>相談情報管理システム　ログイン</title>
+    <script src="js\jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css\login.css">
+  </head>
+  <body>
+    <header>
+      <h1>相談情報管理システム　ログイン</h1>
+      <nav class="h-nav">
+        <ul class="h-menu">
+          <!-- <input type="button" class="head-button" onclick="window.close()" value="終了">-->
+        </ul>
+      </nav>
+    </header>
+    <div id="content">
+      <div id="input-form">
+        <table>
+          <tr>
+            <td>ユーザID：</td>
+            <td><input type="text" name="userid" id="useridlabel"></td>
+          </tr>
+          <tr>
+            <td>パスワード：</td>
+            <td><input type="password"></td>
+          </tr>
+        </table>
+        <div id="testcheck-box">
+          <label><input type="checkbox">研修機能モードで利用する。</label>
+        </div>
+      <div id="err-msg-box">
+        <label>ユーザ認証に失敗しました。</label>
+      </div>
+        <div>
+          <input type="button" id="login-button" onclick="location.href='http://localhost:8080/002TopPage'" value="ログイン">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

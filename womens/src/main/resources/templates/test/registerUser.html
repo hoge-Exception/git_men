@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー登録</title>
+    <link rel="stylesheet" href="../static/css/registerUser.css"> <!-- CSSファイル -->
+    <script src="../static/js/registerUser.js" defer></script> <!-- JSファイル -->
+</head>
+<body>
+    <div class="register-container">
+        <h2>ユーザー登録</h2>
+        <form id="registerForm">
+            <input type="text" name="username" placeholder="ユーザーネーム" required>
+            <input type="password" name="password" placeholder="パスワード" required>
+            <input type="email" name="email" placeholder="メールアドレス" required>
+            <input type="number" name="age" placeholder="年齢" required>
+            <button type="button" onclick="showConfirmationDialog()">ユーザー登録</button>
+        </form>
+    </div>
+
+    <div class="dialog" id="dialog">
+        <div class="dialog-content">
+            <p>ユーザー登録を実行しますか？</p>
+            <div class="dialog-buttons">
+                <button onclick="confirmAction()">はい</button>
+                <button onclick="cancelAction()">いいえ</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

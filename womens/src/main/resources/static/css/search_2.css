@@ -1,0 +1,409 @@
+body {
+  width: 1280px;
+  height: 800px;
+}
+
+/* ヘッダ */
+header {
+  width: 1280px;
+  height: 70px;
+  background: #136FFF;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 200px;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'MS Pゴシック'
+}
+
+header label#user-label {
+  padding-top: 20px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+header .h-nav {
+  margin: 0 0 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+header .head-button {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	height: 30px;
+	font-weight: bold;
+	border: 2px solid #fff;
+	color: #fff;
+	background: #136FFF;
+}
+header .head-button:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+/* ページメイン */
+div#content {
+  margin-top: 90px;
+  font-size: 14px;
+}
+
+
+div#lock-content {
+    padding-right: 20px;
+    text-align: right;
+}
+
+div#lock-content #lock-button {
+  font-size: 22px;
+  margin-left: 40px;
+  width: 250px;
+  height: 40px;
+  color: #fff;
+  background-color: #888888;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+label#memo2-label {
+
+  font-size: 20px;
+  background-color: #FFC7AF;
+}
+
+label#memo-label {
+margin-left: 10px;
+  font-size: 20px;
+}
+
+input[type="button"]:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+div#input-form {
+  margin-top:  10px;
+  margin-left:  10px;
+  overflow-y: auto;
+  width: 410px;
+  height: 250px;
+  border: 2px solid #CCCCCC;
+    float: left;
+}
+
+
+div#input2-form {
+  margin-left:  10px;
+  overflow-y: auto;
+  width: 410px;
+
+}
+
+div#select-form {
+  margin-top:  10px;
+  overflow-y: auto;
+  height: 350px;
+  border: 2px solid #CCCCCC;
+}
+
+table.criteria-table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.criteria-table > tbody > tr {
+  height: 50px;
+}
+
+table.criteria-table > tbody > tr > th {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+  width: 300px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+
+
+table#submit-table  > tbody > tr > th {
+  background: #FFC7AF;
+  width: 200px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+}
+table.submit-table > tbody > tr > td {
+  padding: 5px;
+  width: 100px;
+  border: solid 1.5px #778ca3;
+  font-size: 17px;
+}
+
+
+
+
+
+
+
+
+table#select-table  > tbody > tr > th {
+  background: #e9faf9;
+}
+
+table.criteria-table > tbody > tr > td {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+  font-size: 17px;
+}
+
+table.criteria-table td:nth-of-type(1){
+  width: 90px;
+  text-align: center;
+}
+
+table.criteria-table td:nth-of-type(2){
+  width: 250px;
+  text-align: center;
+}
+
+table.criteria-table td:nth-of-type(3){
+  width: 600px;
+}
+
+table.criteria-table input[type="date"] {
+  height: 25px !important;
+  font-size: 17px !important;
+}
+
+table.criteria-table td.require-label {
+  color: #fff;
+  background-color: red;
+}
+
+
+table.criteria-table .drop {
+  font-size: 18px;
+  width: 100px;
+  height: 25px
+}
+
+table.criteria-table .require-drop {
+  pointer-events: none;
+  background: #C0C0C0;
+}
+
+table.criteria-table input[type="button"] {
+  margin: auto;
+  height: 40px;
+  width: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50vh;
+}
+
+.add-button {
+  cursor: pointer;
+  color: green;
+  background-color: #CCFFCC;
+}
+
+.del-button {
+  cursor: pointer;
+  color: red;
+  background-color: #FFBEDA;
+}
+
+#submit-table .add-button {
+  display: none;
+}
+
+#submit-table .del-button {
+  display: block;
+}
+
+#select-table .add-button {
+  display: block;
+}
+
+#select-table .del-button {
+  display: none;
+}
+
+input[type="text"].text1 {
+  height: 25px;
+  width: 150px;
+  font-size: 18px;
+}
+
+input[type="text"].text-long {
+  height: 25px;
+  width: 400px;
+  font-size: 18px;
+}
+
+table.criteria-table .drop2 {
+  font-size: 18px;
+  width: 180px;
+  height: 25px
+}
+
+
+
+div#cancel-form div {
+  text-align: center;
+  margin-top: 30px;
+}
+
+div#cancel-form #password-button {
+  margin-left: 400px;
+  font-size: 22px;
+  width: 400px;
+  height: 40px;
+  color: #fff;
+  background-color: #888888;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#cancel-form #password-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+div#cancel-form #cancel-button {
+  margin: 20px;
+  margin-left: 200px;
+  font-size: 22px;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  background-color: #d3d3d3;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#cancel-form #cancel-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+
+
+
+
+
+
+
+table.submit-table > tbody > tr > td {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+  font-size: 17px;
+}
+
+table.submit-table td:nth-of-type(1){
+  width: 90px;
+  text-align: left;
+}
+
+table.submit-table td:nth-of-type(2){
+  width: 90px;
+  text-align: left;
+}
+
+table.submit-table td:nth-of-type(3){
+  width: 190px;
+  text-align: left;
+}
+
+table.submit-table input[type="date"] {
+  height: 25px !important;
+  font-size: 14px !important;
+}
+
+table.submit-table td.require-label {
+  color: #fff;
+  background-color: red;
+}
+
+
+table.submit-table .drop {
+  font-size: 18px;
+  width:80px;
+  height: 25px
+}
+
+table.submit-table .require-drop {
+  pointer-events: none;
+  background: #C0C0C0;
+}
+
+table.submit-table input[type="button"] {
+  margin: auto;
+  height: 40px;
+  width: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50vh;
+}
+
+table.submit-table input[type="button"] {
+  margin: auto;
+  height: 40px;
+  width: 70px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50vh;
+}
+
+
+table.submit-table input[type="text"].text1 {
+  height: 25px;
+  width: 40px;
+  font-size: 18px;
+}
+
+table.submit-table input[type="text"].text-long {
+  height: 25px;
+  width: 250px;
+  font-size: 18px;
+}
+
+
+.add-button {
+  cursor: pointer;
+  color: green;
+  background-color: #CCFFCC;
+}
+
+.del-button {
+  cursor: pointer;
+  color: red;
+  background-color: #FFBEDA;
+}
+
+
+table.submit-table .drop2 {
+  font-size: 18px;
+  width: 100px;
+  height: 25px
+}

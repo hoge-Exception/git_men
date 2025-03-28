@@ -1,0 +1,308 @@
+body {
+  width: 1280px;
+  height: 800px;
+}
+
+/* ヘッダ */
+header {
+  width: 1280px;
+  height: 70px;
+  background: #136FFF;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 200px;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'MS Pゴシック'
+}
+
+header label#user-label {
+  padding-top: 20px;
+  padding-left: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+header .h-nav {
+  margin: 0 0 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+header .head-button {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	height: 30px;
+	font-weight: bold;
+	border: 2px solid #fff;
+	color: #fff;
+	background: #136FFF;
+}
+header .head-button:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+
+/* ページメイン */
+div#content {
+  margin-top: 70px;
+}
+
+div#search-content {
+
+  width: 99%;
+  height: 70px;
+  background-color: #FFF8DC;
+}
+
+div#search-content input {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+div#search-content #search-button {
+  margin-left: 0px;
+  width: 80px%;
+  height: 35px;
+  font-size: 20px;
+  margin: 5px;
+  
+  
+}
+
+div#search-content #target-label {
+  margin-left: 10px;
+  font-size: 20px;
+  
+  
+}
+
+div#create-content label#tab-sum {
+  padding-top: 10px;
+  padding-left: 5px;
+  font-size: 18px;
+  
+}
+
+
+
+div#table-content {
+  margin-top: 10px;
+}
+
+div#table-content label#tab-sum {
+  margin-left: 5px;
+  margin-right: 50px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+div#re-panel {
+	padding: 0;
+	margin: 0 0 0 0;
+  width: 100%;
+  height: 30px;
+}
+
+div#re-panel  #re-button {
+  
+  margin-left: 0px;
+  width: 70px;
+  color: #000;
+  background-color: #EEEEEE;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+div#re-panel  #re-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+.drop1 {
+  height: 25px;
+  width: 70px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+
+.sum-table {
+  width: 98%;
+  margin-top: 7px;
+  text-align: center;
+  height: 600px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  overflow-y: scroll;  
+  border: solid 1.5px #778ca3;
+}
+.sum-table th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 5px;
+  background: #27acd9;
+  border: solid 1.5px #778ca3;
+
+}
+
+
+
+.sum-table td {
+  padding: 5px;
+  border: solid 1.5px #778ca3;
+
+  
+}
+
+
+.sum-table td input {
+  display: block;
+  margin: auto;
+  width: 100px;
+  color: #000;
+  background-color: #EEEEEE;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+.sum-table td input:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+.sum-table th:nth-of-type(1),
+.sum-table td:nth-of-type(1){
+  width: 170px;
+}
+
+.sum-table th:nth-of-type(2),
+.sum-table td:nth-of-type(2){
+  width: 100px;
+}
+
+.sum-table th:nth-of-type(3),
+.sum-table td:nth-of-type(3){
+  width: 160px;
+}
+
+.sum-table th:nth-of-type(4),
+.sum-table td:nth-of-type(4){
+  width: 40px;
+}
+
+.sum-table th:nth-of-type(5),
+.sum-table td:nth-of-type(5){
+  width: 40px;
+}
+
+.sum-table th:nth-of-type(6),
+.sum-table td:nth-of-type(6){
+  width: 50px;
+}
+
+.sum-table th:nth-of-type(7),
+.sum-table td:nth-of-type(7){
+  width: 60px;
+}
+
+.sum-table th:nth-of-type(8),
+.sum-table td:nth-of-type(8){
+  width: 380px;
+}
+
+.sum-table th:nth-of-type(9),
+.sum-table td:nth-of-type(9){
+  width: 80px;
+}
+
+.sum-table th:nth-of-type(10),
+.sum-table td:nth-of-type(10){
+  width: 80px;
+}
+
+.sum-table th:nth-of-type(11),
+.sum-table td:nth-of-type(11){
+  width: 20px;
+}
+
+
+
+
+div#content #create-button {
+  
+  margin: 20px;
+  margin-left: 50px;
+  font-size: 22px;
+  width: 350px;
+  height: 40px;
+  color: #fff;
+  background-color: #3cb371;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#content #create-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+
+div#content #create2-button {
+  
+  margin: 20px;
+  margin-left: 50px;
+  font-size: 22px;
+  width: 350px;
+  height: 40px;
+  color: #fff;
+  background-color: #ffa500;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#content #create2-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
+
+div#content #cancel-button {
+
+  margin: 20px;
+  margin-left: 50px;
+  font-size: 22px;
+  width: 300px;
+  height: 40px;
+  color: #fff;
+  background-color: #d3d3d3;
+  border-radius: 50vh;
+  font-family: 'MS Pゴシック';
+  cursor: pointer;
+}
+
+div#content #cancel-button:hover {
+  color: #000;
+  background: #7FFFD4;
+}
